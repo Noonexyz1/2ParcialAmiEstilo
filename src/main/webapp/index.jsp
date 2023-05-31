@@ -38,7 +38,7 @@
         </table>
 
         <h1>Gestion de Productos <br> DIEGO D. MAMANI RAMOS</h1>
-        <p><a href="Inicio?action=add">Nuevo Producto</a></p>
+        <p><a href="ProductoController">Nuevo Producto</a></p>
         <table>
             <tr>
                 <th>Id</th>
@@ -56,8 +56,8 @@
                     <td>${item.cantidad}</td>
                     <td>${item.precio}</td>
                     <td>${item.categoria}</td>
-                    <td>  <a href="Inicio?action=edit&id=${item.id}">Editar</a>  </td>
-                    <td>  <a href="Inicio?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))">Eliminar</a> </td>
+                    <td>  <a href="ProductoController?action=edit&id=${item.id}">Editar</a>  </td>
+                    <td>  <a href="ProductoController?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))">Eliminar</a> </td>
                 </tr>
             </c:forEach>
         </table>

@@ -1,6 +1,9 @@
-com\emergentes\controlador\Inicio.class
-com\emergentes\modelo\Producto.class
-com\emergentes\controler\PreInicio.class
-com\emergentes\dao\ProductoDAO.class
-com\emergentes\dao\ProductoDAOimpl.class
-com\emergentes\utiles\ConexionBD.class
+com/emergentes/controlador/Inicio.class
+com/emergentes/dao/ProductoDAOimpl.class
+com/emergentes/controler/Inicio2.class
+com/emergentes/controler/NuevoProducto.class
+com/emergentes/modelo/Producto.class
+com/emergentes/controler/EditarProducto.class
+.netbeans_automatic_build
+com/emergentes/utiles/ConexionBD.class
+com/emergentes/dao/ProductoDAO.class

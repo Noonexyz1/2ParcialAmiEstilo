@@ -1,6 +1,8 @@
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\controlador\Inicio.java
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\modelo\Producto.java
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\dao\ProductoDAOimpl.java
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\utiles\ConexionBD.java
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\controler\PreInicio.java
-C:\Users\PC12\Documents\WORKSPACE\2ParcialDiegoDMamaniRamos-master\src\main\java\com\emergentes\dao\ProductoDAO.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/utiles/ConexionBD.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/controler/NuevoProducto.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/dao/ProductoDAOimpl.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/dao/ProductoDAO.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/controler/Inicio2.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/controler/EditarProducto.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/modelo/Producto.java
+/home/noone/Documentos/WORKSPACE_JAVA_WEB/2ParcialAmiEstilo/src/main/java/com/emergentes/controlador/Inicio.java
