@@ -20,12 +20,13 @@ public class ProductoController extends HttpServlet {
             throws ServletException, IOException {
 
         productoServicio = new ProductoServicioImpl();
-        productoServicio.evaluador(request, response);
+        productoServicio.evaluador(request);
         
         Producto producto = productoServicio.encontrarProducto();
         String elementoJsp = productoServicio.getElementoJsp();    
+        String atributo = productoServicio.getAtributo();
         
-        request.setAttribute("producto", producto);
+        request.setAttribute(atributo, producto);
         request.getRequestDispatcher(elementoJsp).forward(request, response);
 
     }
@@ -34,8 +35,12 @@ public class ProductoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        productoServicio = new ProductoServicioImpl();
+        
+        
         //recibimos los datos del formulario
-        //enviamos a la base de datos
+        productoServicio.manegador(request);
+        
         //redirijimos a la pagina de inicio
         //request.setAttribute("productos", null);
         /*este metodo ya tiene el getContexPath()*/

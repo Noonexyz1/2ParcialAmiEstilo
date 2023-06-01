@@ -39,6 +39,7 @@
 
         <h1>Gestion de Productos <br> DIEGO D. MAMANI RAMOS</h1>
         <p><a href="ProductoController?action=new">Nuevo Producto</a></p>
+        
         <p><a href="ProductoController?action=edit&id=${item.id}">Editar</a></p>
         <p><a href="ProductoController?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))">Eliminar</a></p>
         
