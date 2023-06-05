@@ -1,8 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="com.emergentes.modelo.Producto"%>
 <%
-    ArrayList<Producto> producto = (ArrayList<Producto>) request.getAttribute("productos");
+    List<Producto> productos = (List<Producto>) request.getAttribute("productos");
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +25,16 @@
 
     <body>
 
+        <%-- 
+        <% if (!productos.isEmpty()) {%>
+        <%= productos.get(0).getId()%> <br>
+        <%= productos.get(0).getDescripcion()%> <br>
+        <%= productos.get(0).getCantidad()%> <br>
+        <%= productos.get(0).getPrecio()%> <br>
+        <%= productos.get(0).getCategoria()%> <br>
+        <% }%>
+        --%>
+        
         <table border="1">
             <tr>
                 <td>
@@ -40,9 +50,6 @@
         <h1>Gestion de Productos <br> DIEGO D. MAMANI RAMOS</h1>
         <p><a href="ProductoController?action=new">Nuevo Producto</a></p>
         
-        <p><a href="ProductoController?action=edit&id=${item.id}">Editar</a></p>
-        <p><a href="ProductoController?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro de eliminar???????'))">Eliminar</a></p>
-        
         <table>
             <tr>
                 <th>Id</th>
@@ -53,7 +60,7 @@
                 <th></th>
                 <th></th>
             </tr>
-            <c:forEach var="item" items="${producto}">
+            <c:forEach var="item" items="${productos}">
                 <tr>
                     <td>${item.id}</td>
                     <td>${item.descripcion}</td>

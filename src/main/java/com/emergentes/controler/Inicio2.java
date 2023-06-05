@@ -1,9 +1,11 @@
 
 package com.emergentes.controler;
 
+import com.emergentes.modelo.Producto;
 import com.emergentes.servicio.ProductoServicio;
 import com.emergentes.servicio.ProductoServicioImpl;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +25,14 @@ public class Inicio2 extends HttpServlet {
         /*traer todos los datos*/
         productoServicio = new ProductoServicioImpl();
         
-        request.setAttribute("productos", productoServicio.traerProductos());
+        List<Producto> lista = productoServicio.traerProductos();
+        
+        //por alguna razon no funciona con:
+        //request.setAttribute("productos", productoServicio.traerProductos());
+        //Me parece que es debido a que la implementacion es con ArrayList y yo uso el List interface  
+        
+        //es mejor hacerlo de esta manera y no complicar las cosas sin motivo:
+        request.setAttribute("productos", lista);
         request.getRequestDispatcher("index.jsp").forward(request, response);
         
     }

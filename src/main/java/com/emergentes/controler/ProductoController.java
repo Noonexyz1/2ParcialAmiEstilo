@@ -20,6 +20,7 @@ public class ProductoController extends HttpServlet {
             throws ServletException, IOException {
 
         productoServicio = new ProductoServicioImpl();
+        
         productoServicio.evaluador(request);
         
         Producto producto = productoServicio.encontrarProducto();
@@ -28,9 +29,15 @@ public class ProductoController extends HttpServlet {
         
         request.setAttribute(atributo, producto);
         request.getRequestDispatcher(elementoJsp).forward(request, response);
-
+        
     }
 
+    /*
+    Cuando haces un GET o un POST, al ejecutarse, lo hacen de forma que desconocen el uno del otro.
+    Solo puede ejecutar cada metodo independientemente, en un solo hilo, por lo tanto, los metodos subyacentes
+    y los objetos, deben ser inicializados, para evitar un null pointer.
+     */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,7 +46,7 @@ public class ProductoController extends HttpServlet {
         
         
         //recibimos los datos del formulario
-        productoServicio.manegador(request);
+        productoServicio.manejador(request);
         
         //redirijimos a la pagina de inicio
         //request.setAttribute("productos", null);
@@ -50,5 +57,4 @@ public class ProductoController extends HttpServlet {
     }
     
     
-
 }

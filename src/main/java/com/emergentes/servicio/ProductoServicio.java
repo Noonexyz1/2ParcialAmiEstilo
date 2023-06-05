@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface ProductoServicio {
     
-    public void manegador(HttpServletRequest request);
+    public void manejador(HttpServletRequest request);
     public void evaluador(HttpServletRequest request);
     
     public List<Producto> traerProductos();

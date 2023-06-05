@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class ProductoServicioImpl implements ProductoServicio {
 
@@ -20,6 +19,7 @@ public class ProductoServicioImpl implements ProductoServicio {
 
     public ProductoServicioImpl() {
         dao = new ProductoDAOimpl();
+        producto = new Producto();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ProductoServicioImpl implements ProductoServicio {
     }
 
     @Override
-    public void manegador(HttpServletRequest request) {
+    public void manejador(HttpServletRequest request) {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
             String descripcion = request.getParameter("descripcion");
@@ -46,7 +46,6 @@ public class ProductoServicioImpl implements ProductoServicio {
             float precio = Float.parseFloat(request.getParameter("precio"));
             String categoria = request.getParameter("categoria");
 
-            //Producto producto = new Producto();
             producto.setId(id);
             producto.setDescripcion(descripcion);
             producto.setCantidad(cantidad);
@@ -86,10 +85,14 @@ public class ProductoServicioImpl implements ProductoServicio {
             }
 
         } else if (request.getParameter("action").equals("delete")) {
-            elemntoJsp = "producto.jsp";
-            //elemntoJsp = "producto.jsp";
+            elemntoJsp = "/Inicio2";
+            
+            /*Al momento de enviar esta cadena, lo enviara al index y no al formulario, si que pondre otro valor ya que 
+            no me permite que el valor sea nulo*/
+            atributo = "valor_para_hacer_dismatch_o_engañar_al_setAtribute('sdf', 'asdf'";
+            
             try {
-                dao.delete(Integer.parseInt(request.getParameter("id")));
+                dao.delete(Integer.parseInt(request.getParameter("id")));                
             } catch (Exception ex) {
                 System.out.println("ERROR en evaluador()" + ex.getMessage());
                 ex.getStackTrace();
@@ -107,10 +110,10 @@ public class ProductoServicioImpl implements ProductoServicio {
         try {
             productos = dao.getAll();
         } catch (Exception ex) {
-            Logger.getLogger(ProductoServicioImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            return productos;
+            System.out.println("ERROR EN TRAER PRODUCTO: " + ex.getMessage());
         }
+        
+        return productos;
 
     }
 

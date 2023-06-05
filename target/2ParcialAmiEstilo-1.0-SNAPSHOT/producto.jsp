@@ -24,6 +24,16 @@
         
     </head>
     <body>
+        
+        <% if (!producto.equals("null")) {%>
+        <%= producto.getId()%> <br>
+        <%= producto.getDescripcion()%> <br>
+        <%= producto.getCantidad()%> <br>
+        <%= producto.getPrecio()%> <br>
+        <%= producto.getCategoria()%> <br>
+        <% }%>
+        
+        
         <h1>
             <c:if test="${producto.id == 0}">
                 Nuevo Registro
